@@ -1,4 +1,5 @@
 def menu_links(request):
+    print(f'context processor basket works')
     return {
         "menu_links": [
             {"url": "main", "active": ["main"], "name": "домой"},
@@ -10,3 +11,5 @@ def menu_links(request):
             {"url": "contact", "active": ["contact"], "name": "контакты"},
         ]
     }
+
+

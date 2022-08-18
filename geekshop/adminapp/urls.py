@@ -1,10 +1,15 @@
-from django.urls import path
+from django.urls import path, re_path
 
 import adminapp.views as adminapp
 
 app_name = "adminapp"
 
 urlpatterns = [
+
+    re_path(r'^$', mainapp.main, name='main'),
+    re_path(r'^products/', include('mainapp.urls', namespace='products')),
+
+
     path("users/create/", adminapp.UserCreateView.as_view(), name="user_create"),
     path("users/read/", adminapp.UserListView.as_view(), name="users"),
     path(
